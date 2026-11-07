@@ -1,6 +1,5 @@
 import { createDigitValidator } from './createDigitValidator.js';
 
-/** Keep the boundary checks separate from the pure character predicate. */
 export function isValidGuess(guess: string, length: number, base: number): boolean {
   if (!Number.isInteger(length) || length < 2 || length > 6 || length > base) {
     return false;

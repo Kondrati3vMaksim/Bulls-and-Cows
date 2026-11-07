@@ -126,7 +126,6 @@ function instructionCard(): HTMLElement {
   return card;
 }
 
-/** Plain text is never inserted as HTML. */
 function documentText(value: string): HTMLElement {
   return node('span', '', value);
 }

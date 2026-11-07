@@ -36,7 +36,6 @@ export const createInitialState = (): GameState => ({
   history: [],
 });
 
-/** Settings can only change before the round begins. */
 export function configureGame(state: GameState, base: Base, length: number): GameState {
   if (state.phase !== 'setup') return state;
   const safeLength = Math.min(6, Math.max(2, Math.min(base, length)));
@@ -72,7 +71,6 @@ export function submitGuess(state: GameState, guess: string, now: number): Submi
   };
 }
 
-/** Reset round state and unlock settings without navigating/reloading. */
 export function resetGame(state: GameState): GameState {
   return { ...state, phase: 'setup', secret: null, startedAt: null, finishedAt: null, history: [] };
 }

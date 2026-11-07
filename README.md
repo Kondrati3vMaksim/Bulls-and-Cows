@@ -32,6 +32,8 @@ All DOM elements are created in TypeScript using `document.createElement`. `inde
 
 ## Deployment
 
-A GitHub Actions workflow on branch `bulls-and-cows` validates and deploys the compiled site to GitHub Pages. The repository owner may first need to enable **Settings → Pages → Source: GitHub Actions**. GitHub Pages availability for a private repository depends on the GitHub account plan.
+Live demo: https://sunny-marshmallow-3df434.netlify.app/.
+
+GitHub Actions checks types, lint, tests, and compilation. The Netlify deployment was uploaded separately; pushing changes to GitHub does not automatically republish it.
 
 Do not merge the assignment PR into `main` before cross-check grading.

@@ -20,7 +20,6 @@ const scoreIsValid = (item: unknown): item is Score => {
   );
 };
 
-/** Stable, deterministic ranking per settings (fewest attempts, then fastest). */
 export function rankScores(scores: readonly Score[], limit = 5): Score[] {
   const groups = new Map<string, Score[]>();
   scores.filter(scoreIsValid).forEach((score) => {
