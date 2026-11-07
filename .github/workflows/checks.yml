@@ -1,0 +1,31 @@
+name: Continuous integration
+
+on:
+  push:
+    branches: [bulls-and-cows]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Check types
+        run: npm run typecheck
+      - name: Check lint
+        run: npm run lint
+      - name: Run tests
+        run: npm test
+      - name: Compile
+        run: npm run build
